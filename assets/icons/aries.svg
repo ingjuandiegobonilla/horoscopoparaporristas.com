@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Aries">
+  <title>Aries</title>
+  <g fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 72
+             C20 40, 44 28, 64 52
+             C84 28, 108 40, 108 72" />
+    <path d="M64 52 C64 72, 64 84, 64 104" />
+  </g>
+</svg>
