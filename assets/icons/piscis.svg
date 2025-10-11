@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Piscis">
+  <title>Piscis</title>
+  <g fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- two mirrored fish arcs and connecting bar -->
+    <path d="M20 44 C44 20, 60 44, 44 64" />
+    <path d="M108 84 C84 108, 68 84, 84 64" />
+    <path d="M44 64 H84" />
+  </g>
+</svg>

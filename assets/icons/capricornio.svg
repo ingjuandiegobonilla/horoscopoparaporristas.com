@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Capricornio">
+  <title>Capricornio</title>
+  <g fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- curved N-ish with loop -->
+    <path d="M24 60 C36 36, 56 36, 68 60" />
+    <path d="M68 60 C80 84, 92 84, 96 72 C100 60, 84 56, 72 64" />
+    <path d="M72 64 L72 96" />
+  </g>
+</svg>

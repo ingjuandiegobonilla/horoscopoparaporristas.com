@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Géminis">
+  <title>Géminis</title>
+  <g fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- two vertical pillars connected top and bottom -->
+    <path d="M36 28 L36 96" />
+    <path d="M92 28 L92 96" />
+    <path d="M24 28 H104" />
+    <path d="M24 96 H104" />
+  </g>
+</svg>
+

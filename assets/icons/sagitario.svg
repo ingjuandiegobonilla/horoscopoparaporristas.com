@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Sagitario">
+  <title>Sagitario</title>
+  <g fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- arrow and diagonal -->
+    <path d="M28 96 L72 52" />
+    <path d="M44 84 L32 100 L48 104 Z" fill="none" />
+    <path d="M72 52 L100 52" />
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Libra">
+  <title>Libra</title>
+  <g fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- arch and two base lines -->
+    <path d="M24 56 C44 36, 84 36, 104 56" />
+    <path d="M32 80 H96" />
+    <path d="M24 92 H104" />
+  </g>
+</svg>

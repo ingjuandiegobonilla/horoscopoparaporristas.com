@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Acuario">
+  <title>Acuario</title>
+  <g fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- two wavy lines -->
+    <path d="M16 48 C32 32, 48 64, 64 48 C80 32, 96 64, 112 48" />
+    <path d="M16 80 C32 64, 48 96, 64 80 C80 64, 96 96, 112 80" />
+  </g>
+</svg>

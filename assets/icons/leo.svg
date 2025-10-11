@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Leo">
+  <title>Leo</title>
+  <g fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- loop and tail -->
+    <path d="M36 64 C36 44, 56 36, 72 44 C88 52, 88 72, 68 84" />
+    <path d="M68 84 C84 92, 100 88, 104 104" />
+  </g>
+</svg>
