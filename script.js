@@ -1,30 +1,67 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const hoy = new Date().toISOString().split("T")[0];
-  document.getElementById("fecha").textContent = `Horóscopos para el ${hoy}`;
+  const params = new URLSearchParams(window.location.search);
+  const fechaParam = params.get("fecha");
 
-  const today = new Date();
-  const month = String(today.getMonth() + 1).padStart(2, "0");
-  const day = String(today.getDate()).padStart(2, "0");
-  
-  try {
-    const response = await fetch(`data/${month}-${day}.json`);
-    if (!response.ok) throw new Error("No se encontró el archivo del día");
-    const data = await response.json();
-    renderHoroscopos(data);
-  } catch (err) {
-    document.getElementById("horoscopos").innerHTML = `
-      <p>No se encontró el horóscopo del día 😢</p>
-    `;
-  }
+  // 📅 Si hay query param ?fecha=DD-MM usa ese, si no usa la fecha actual
+  const fecha = fechaParam || (() => {
+    const hoy = new Date();
+    const dia = String(hoy.getDate()).padStart(2, "0");
+    const mes = String(hoy.getMonth() + 1).padStart(2, "0");
+    return `${dia}-${mes}`;
+  })();
+
+  const [dia, mes] = fecha.split("-");
+  const anioActual = new Date().getFullYear();
+
+  // 🗓️ Generar una fecha legible: “10 de noviembre de 2025”
+  const fechaLegible = new Date(anioActual, mes - 1, dia)
+    .toLocaleDateString("es-ES", {
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    });
+
+
+  document.getElementById("fecha").textContent = `Horóscopos para el ${fechaLegible}`;
+
+  loadHoroscopo(fecha, fechaLegible);
 });
 
 function renderHoroscopos(data) {
   const container = document.getElementById("horoscopos");
-  container.innerHTML = data.signos.map(signo => `
-    <div class="signo">
-      <img src="assets/icons/${signo.slug}.svg" alt="${signo.nombre}">
-      <h2>${signo.nombre}</h2>
-      <p>${signo.texto}</p>
-    </div>
-  `).join("");
+  container.innerHTML = "";
+
+  // Convertir el objeto { Aries: "...", Tauro: "..." } en array [ [signo, texto], ... ]
+  Object.entries(data).forEach(([signo, texto]) => {
+    const slug = signo
+      .toLowerCase()
+      .normalize("NFD") // elimina acentos
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/ñ/g, "n"); // por si acaso
+    
+    const signoHTML = `
+      <div class="signo">
+        <img src="assets/icons/${slug}.svg" alt="${signo}">
+        <h2>${signo}</h2>
+        <p>${texto}</p>
+      </div>
+    `;
+    container.innerHTML += signoHTML;
+  });
+}
+
+async function loadHoroscopo(fecha, fechaLegible) {
+
+  const url = `data/${fecha}.json`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Archivo no encontrado");
+    const data = await response.json();
+    renderHoroscopos(data);
+  } catch (error) {
+    console.error(`❌ No se pudo cargar el horóscopo para ${fechaLegible}:`, error);
+    document.getElementById("horoscopos").innerHTML =
+      `<p class="error">No se encontró el horóscopo para el ${fechaLegible} 😢</p>`;
+  }
 }

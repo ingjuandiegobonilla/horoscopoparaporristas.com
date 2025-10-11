@@ -5,7 +5,8 @@
   "main": "script.js",
   "type": "module",
   "scripts": {
-    "local": "node server.js"
+    "local": "node server.js",
+    "update-sitemap": "node updateSitemap.js"
   },
   "keywords": [],
   "author": "",

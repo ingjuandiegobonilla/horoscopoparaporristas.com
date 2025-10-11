@@ -1,0 +1,4 @@
+# robots.txt for horoscopoparaporristas.com
+
+User-agent: *
+Allow: /
