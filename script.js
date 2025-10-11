@@ -2,15 +2,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
   const fechaParam = params.get("fecha");
 
-  // 📅 Si hay query param ?fecha=DD-MM usa ese, si no usa la fecha actual
+  // 📅 Si hay query param ?fecha=MM-DD usa ese, si no usa la fecha actual
   const fecha = fechaParam || (() => {
     const hoy = new Date();
     const dia = String(hoy.getDate()).padStart(2, "0");
     const mes = String(hoy.getMonth() + 1).padStart(2, "0");
-    return `${dia}-${mes}`;
+    return `${mes}-${dia}`;
   })();
 
-  const [dia, mes] = fecha.split("-");
+  const [mes, dia] = fecha.split("-");
   const anioActual = new Date().getFullYear();
 
   // 🗓️ Generar una fecha legible: “10 de noviembre de 2025”
