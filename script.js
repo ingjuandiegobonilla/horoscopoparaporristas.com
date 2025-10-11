@@ -31,7 +31,6 @@ function renderHoroscopos(data) {
   const container = document.getElementById("horoscopos");
   container.innerHTML = "";
 
-  // Convertir el objeto { Aries: "...", Tauro: "..." } en array [ [signo, texto], ... ]
   Object.entries(data).forEach(([signo, texto]) => {
     const slug = signo
       .toLowerCase()
