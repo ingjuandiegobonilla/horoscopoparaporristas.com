@@ -1,4 +1,6 @@
 # robots.txt for horoscopoparaporristas.com
+# Sitemaps
+Sitemap: https://www.horoscopoparaporristas.com/sitemap.xml
 
 User-agent: *
 Allow: /
